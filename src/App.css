@@ -1,0 +1,268 @@
+/* App.css */
+
+@import url('@fortawesome/fontawesome-free/css/all.css');
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+  height: 700px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  background-color: #007bff;
+  color: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.chat-header .header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-icons i {
+  font-size: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  color: white;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+.chat-message {
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 75%;
+  word-wrap: break-word;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.chat-message.user {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+  margin-left: 30%;
+  color: #333;
+  transform: translateX(5px); /* Example of adding a subtle animation */
+}
+
+.chat-message.bot {
+  background-color: #e9ecef;
+  align-self: flex-start;
+  color: #333;
+  transform: translateX(-5px); /* Example of adding a subtle animation */
+}
+
+.chat-message.loading {
+  font-style: italic;
+  color: #999;
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #f7f7f7;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  margin-right: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.chat-footer input:focus {
+  border-color: #007bff;
+}
+
+.chat-footer button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.chat-footer button:hover {
+  background-color: #0056b3;
+}
+
+.chat-footer button i {
+  margin-left: 5px;
+}
+
+
+/* Add this to your App.css */
+
+/* Blinking three dots animation */
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #999;
+  color: #999;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #999;
+  color: #999;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #999;
+  color: #999;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: #999;
+  }
+  50%,
+  100% {
+    background-color: #f5f5f5;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .chat-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .chat-header, .chat-footer {
+    padding: 10px;
+  }
+
+  .chat-header h2 {
+    font-size: 16px;
+  }
+
+  .header-icons i {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .chat-body {
+    padding: 10px;
+  }
+
+  .chat-message {
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .chat-footer input {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .chat-footer button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .dot-flashing, .dot-flashing::before, .dot-flashing::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  .dot-flashing::before {
+    left: -10px;
+  }
+
+  .dot-flashing::after {
+    left: 10px;
+  }
+}
+
+/* Custom select styles */
+.custom-select {
+  width: 70%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none; /* Removes default arrow */
+  -webkit-appearance: none; /* For older versions of Chrome and Safari */
+  -moz-appearance: none; /* For older versions of Firefox */
+  background-color: #fff; /* Background color */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path fill="%23999" d="M2 0l4 4 4-4H2z"/></svg>'); /* Arrow SVG */
+  background-repeat: no-repeat; /* Prevents multiple arrows */
+  background-position: right 8px center; /* Position of the arrow */
+  padding-right: 24px; /* Space for the arrow */
+  cursor: pointer; /* Cursor style */
+  margin-left: 20px;
+}
+
+.custom-select:focus {
+  outline: none; /* Removes focus outline */
+  border-color: #007bff; /* Focus border color */
+}
