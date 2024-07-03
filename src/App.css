@@ -227,12 +227,18 @@ body {
 
   .chat-footer input {
     padding: 8px;
-    font-size: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  -webkit-text-size-adjust: 100%; /* Prevent zoom on input focus for WebKit browsers */
+
   }
 
   .chat-footer button {
     padding: 8px 16px;
-    font-size: 12px;
+    
+    font-size: 16px; /* Updated font size to 16px */
+  -webkit-text-size-adjust: 100%; /* Prevent zoom on button focus for WebKit browsers */
+
   }
 
   .dot-flashing, .dot-flashing::before, .dot-flashing::after {
