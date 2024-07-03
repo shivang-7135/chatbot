@@ -10,8 +10,6 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #f5f5f5;
-  overflow: hidden;
-  position: relative;
 }
 
 
@@ -38,8 +36,7 @@ body {
   color: white;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  /* position: sticky; */
-  position: fixed;
+  position: sticky;
 }
 
 .chat-header h2 {
@@ -117,7 +114,6 @@ body {
   outline: none;
   font-size: 14px;
   transition: border-color 0.3s;
-  position: fixed;
 }
 
 .chat-footer input:focus {
@@ -203,7 +199,7 @@ body {
 @media (max-width: 600px) {
   .chat-container {
     width: 100vw;
-    height: 94vh;
+    height: 80vh;
     border-radius: 0;
   }
 
