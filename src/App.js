@@ -16,13 +16,13 @@ function App() {
       setInput('');
       setLoading(true);
 
+      const dataMessages = newMessages.map(msg => ({
+        content: msg.text,
+        role: msg.sender === 'user' ? 'user' : 'system'
+      }));
+
       const data = {
-        messages: [
-          {
-            content: input,
-            role: 'user'
-          }
-        ],
+        messages: dataMessages,
         model: document.getElementById('modelID').value
       };
 
