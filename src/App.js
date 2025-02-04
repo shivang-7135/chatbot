@@ -93,7 +93,7 @@ function App() {
             Chatbot 
             <select name="model" id="modelID" defaultValue="mixtral:8x7b-instruct-v0.1-q6_K" className="custom-select">
               <option value="">--Please choose an option--</option>
-              <option value="falcon:40b-instruct-q5_1">falcon:40b-instruct-q5_1</option>
+              <option value="deepseek-r1:70b">deepseek-r1:70b</option>
               <option value="gemma:7b-instruct-q6_K">gemma:7b-instruct-q6_K</option>
               <option value="llama2:70b-chat-q6_K">llama2:70b-chat-q6_K</option>
               <option value="llama3:70b-instruct-q6_K">llama3:70b-instruct-q6_K</option>
